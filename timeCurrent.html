@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <style>
+        th,tr{
+            border: 1px solid black;
+            text-align: center;
+        }
+        table {
+          border-collapse: collapse;
+        }
+        #time{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>List</h1>
+        <input type="text" id ="congviec">
+        <select name="select" id="idSelect">
+            <option value="todo">TODO</option>
+            <option value="cancel">CANCEL</option>
+            <option value="done">DONE</option>
+        </select>
+        <button id="add" onclick="add()">ADD</button>
+        <br>
+        <h3 id="time" ></h3>
+        <hr>
+        <table id="table" style="width: 60%;">
+            <thead>
+                <th>stt</th>
+                <th >viec can lam</th>
+                <th>trang thai</th>
+                <th>thoi gian</th>
+                <th></th>
+            </thead>
+            <tbody id="idtable">
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+
+
+       setInterval(timecur, 1000);
+
+       function timecur(){
+            document.getElementById('time').innerText = myTimer();
+               showTableData();
+       }
+
+        function myTimer(addflag) {
+         
+            var d = new Date();
+            var h = d.getHours();
+            var m = d.getMinutes();
+            if(addflag){
+                m = m+1;
+                if(m >59){
+                m="00";
+                if(h===23){
+                    h = 0;
+                }else{
+                     h = h+1;
+                }   
+
+            }
+            }
+            if(m<10){
+                m = "0"+m;
+            }else{
+                m=m;
+            }
+            
+            if(m >59){
+                m="00";
+                if(h===23){
+                    h = 0;
+                }else{
+                     h = h+1;
+                }   
+
+            }
+            var s = d.getSeconds();
+            if(s<10){
+                s = "0"+s;
+            }else{
+                s=s;
+            }
+            
+            var mytime = h+":"+m+":"+s;
+            return mytime;
+        }
+        var dem = 1;
+        function add(){
+       
+            var congviec = document.getElementById('congviec').value;
+            var luachon = document.getElementById('idSelect').value;
+            
+            document.getElementById('idtable').innerHTML += "<tr id = '"+dem+"'> <td>"+dem+"</td> <td>"+congviec+"</td> <td>"+luachon+"</td> <td>"+myTimer(1)+"</td></tr>";
+            dem++;
+        }
+
+        function showTableData() {
+            //debugger;
+            var myTab = document.getElementById('table');          
+            for (i = 1; i < myTab.rows.length; i++) {
+               var gett =  table.rows[i].cells[3].innerHTML;
+               var getlc =  table.rows[i].cells[2].innerHTML;
+               var getcv =  table.rows[i].cells[1].innerHTML;
+               var getstt =  table.rows[i].cells[0].innerText;
+              
+               if(gett == myTimer() ) {
+                    switch(getlc){
+                        case "done":
+                            document.getElementById(getstt).style.backgroundColor = '#04B431';
+                            break;
+                        case "cancel":
+                            document.getElementById(getstt).style.backgroundColor = '#FF0000';
+                            break;
+                        case "todo":
+                            document.getElementById(getstt).style.backgroundColor = '#FACC2E';
+                            break;
+                    }
+                    
+               }              
+            }
+    }
+    </script>
+
+</body>
+</html>

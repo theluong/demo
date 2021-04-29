@@ -1,0 +1,106 @@
+/*
+ ***lorem  :sinh ra các kí tự text
+
+ ****responsive (giống chèn CSS)
+    @media only screem and (min-width/max-width : [số xxx]px){
+        nội dung...
+    }
+
+
+***[số xxx]
+    mobile: 600px trở xuống
+    ipad;   768 - 789 px
+    ipad pro: 998px
+    laptop : 1100px trở lên
+
+    
+    .classA{
+        color : white;
+        font-size : 16px;
+    }
+    
+    ==> vvề mobile sẽ viết:
+    (thuộc tính thay đổi ms cần viết vào media query , bỏ font-size)
+    @media only screem and (min-width/max-width : 586px){
+        .classA{
+            color : white;
+        }
+    }
+***search gg :"media query bootrap"
+// small mobile
+    @media (max-width: 576px) { ... }
+//large mobile
+@media (min-width: 576px) { ... }
+
+// ipad
+@media (min-width: 768px) { ... }
+
+// ipad pro
+@media (min-width: 992px) { ... }
+
+// laptop
+@media (min-width: 1200px) { ... }
+
+***khi viết chỉ viết cái mà hình nhỏ nhất để ăn css cho các cái lớn hơn thuộc tính giống nhau
+
+
+ ***pointer-event: none(k cho thao tác chuột)
+
+ *** variable :
+    .A{
+        background:var (--background);
+    }
+    
+    .ABC{
+        --background: green;
+    }
+
+***animation, hover(khi rê chuột vào)
+    transition, tranform 
+    @keyframe name{
+
+    }
+    [animation bị giật lag chuột thì sử dụng thẻ <div> cha bọc lại animation con]
+
+
+    per
+    html,class, id ::befor
+                    :after
+                    :hover
+                    :focus
+                    :active
+                    :placeholder-shown
+
+                    pe
+ */
+
+
+.blog{
+    size: 1000px;
+    height: 900px;
+}
+.blog1{
+    display: flex;
+   
+}
+.center{
+    text-align: center;
+}
+
+.tron{
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background-color: black;
+    margin: 10px;
+}
+.size{
+    size: 150px;
+}
+.blog2{
+    width: 40%;
+    height: 400px;
+}

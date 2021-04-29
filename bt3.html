@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            width: 90%;
+            padding: 0px 5%;
+        }
+
+        .content {
+            display: flex;
+           
+        }
+
+        .header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .body-content {
+            width: 50%;
+        }
+
+        .body-content .body-head {
+            display: flex;
+        }
+
+        .round {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        .body-head>*+* {
+            margin-left: 10px;
+        }
+
+        .black {
+            background-color: #000;
+        }
+
+        .black-500 {
+            background-color: #555;
+        }
+
+        .black-300 {
+            background-color: #ccc;
+        }
+
+        .big-text {
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        .btn {
+            margin-top: 35px;
+        }
+        button:hover{
+            background-color: #000;
+            color: aliceblue;
+        }
+
+        .video {
+            flex: 1;
+        }
+
+        video {
+            margin-left: 5%;
+            max-width: 100%;
+        }
+
+        @media (max-width: 576px) {
+            .body-content {
+                width: 100%;
+            }
+            .video{
+                display: none;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div style="width: 90%; height: auto;">
+        <div class="header">
+            contact with owner
+        </div>
+        <div class="content">
+            <div class="body-content">
+                <div class="body-head">
+                    <div class="round black"></div>
+                    <div class="round black-500"></div>
+                    <div class="round black-300"></div>
+                </div>
+                <div class="big-text">
+                    BREAK YOUR LIMIT TO GET HIGH EXP.
+                </div>
+                <div class="text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam, id, accusamus porro beatae dolores
+                    quis repellat in possimus autem, accusantium vero perspiciatis. Voluptate saepe nam, deserunt non nisi
+                    excepturi quisquam!
+                </div>
+                <button class="btn">
+                    discovery now
+                </button>
+            </div>
+            <div class="video">
+                <video src="./video.mp4" autoplay></video>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

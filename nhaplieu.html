@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bt5nhaplieu.css">
+
+</head>
+<body>
+    <h1 style="text-align: center; color: royalblue;">Nhập liệu</h1>
+    <div>
+        <h4>nhập họ</h4>
+        <input type="text"  id="ho">
+        <h4>nhập tên</h4>
+        <input type="text"  id="ten">
+        <button id="btn-nhap" onclick="nhaplieu()"> Thêm dữ liệu</button>
+    </div>
+    <br>
+
+        <table class="bo-vien size" id="table">
+                  <tr>
+                    <th>firstName</th>
+                    <th>lastName</th>
+                </tr>
+                                  
+        </table>
+
+    <script> 
+        var datahoten = "";
+        window.onload=function nhaplieu(){   
+            debugger;  
+            var dataHo = document.getElementById("ho").Value;
+            var dataTen = document.getElementById("ten").Value;     
+            datahoten += "<tr><td>" + dataHo + "</td> <td>" + dataTen + "</td> </tr>";
+            document.getElementById("table").innerHTML = datahoten;
+        }
+    </script>
+
+    <!-- <input type="text" id ="firstname"> Họ
+    <input type="text" id = "lastname"> Tên 
+    <button id = "add" onclick="add_name()">add</button>
+    <table style="width : 100%" id = "infor">
+       <tr>
+         <th>firstName</th>
+         <th>lastName</th>
+       </tr>
+   </table>
+   <script>
+     var fullname = "";
+     
+     function add_name() {
+       var first = document.getElementById("firstname").value;
+       var last = document.getElementById("lastname").value;
+       fullname += "<tr><td>" + first + "</td> <td>" + last + "</td> </tr>";
+       document.getElementById("infor").innerHTML=fullname;
+    }
+    </script> -->
+</body>
+</html>

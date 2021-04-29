@@ -1,0 +1,25 @@
+
+body{
+    width: 100%;
+    height: auto;
+    padding: 0px 1%;
+}
+.size-blog1{
+    width: 80%;
+    height: 80px;
+    margin: 0 auto;
+}
+.size-img{
+    width: 5px;
+    height: 5px;
+}
+
+.bg-blog1{
+    background-color: blueviolet;
+}
+.bg-blog2{
+    background-color: rgb(238, 253, 24);
+}
+.bg-blog3{
+    background-color: rgb(204, 71, 78);
+}

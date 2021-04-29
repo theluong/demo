@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bt4.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-5.0.0-beta2-dist/js/bootstrap.min.js">
+   
+</head>
+<body>
+    <div>
+        <!--  CRUD -->
+            <div>
+                <div> <h1>TODO LIST.</h1></div>
+            </div>
+
+            <div class="row ">
+                <div class="col-md-4">
+                    <input type="text" id="input">
+                </div>
+                <div class="col-md-4">
+                    <button id="check">check</button>
+                </div>
+
+                <div class="col-md-4"> 
+                    <select name="" id="">
+                        <option value="hanghoa">hang hoa</option>
+                        <option value="linhkien">linh kien</option>
+                        <option value="dochoi">do choi</option>
+                    </select>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-lg-2 justify-content-right" >
+                    <button class="btn btn-primary" onclick="myFunction()">them moi</button>
+                </div>
+                <div class="col-lg-2 justify-content-right" >
+                    <button class="btn btn-primary" onclick="document.write(5 + 6)">cap nhat</button>
+                </div>
+                <div class="col-lg-2 justify-content-right" >
+                    <button class="btn btn-primary">xoa</button>
+                </div>
+            </div>
+
+            <div>
+                <h4>kqua hien thi</h4>
+                <table style="border:1px solid black;">
+                    <tr>
+                        <td style="border:1px solid black;">name</td>
+                        <td style="border:1px solid black;">select</td>
+                        <td style="border:1px solid black;">time</td>
+                    </tr>
+                    <!-- <tr>
+                        <p style="border:1px solid black;"  id="btn1"></p>
+                        <td style="border:1px solid black;"  id="btn1"></td>
+                        <td style="border:1px solid black;"  id="btn1"></td>
+                    </tr> -->
+                </table>
+            </div>
+            <hr>
+            <div>
+                <select name="select" id="listyear"></select>
+            </div>
+
+
+            <div>
+                <h1>hung</h1>
+                <h2 >ket qua</h2>
+                <div id="kqua"></div>
+               
+            </div>
+        <!--  end CRUD -->
+    </div>
+
+    <script>
+        function myFunction() {
+        document.getElementById("btn1").innerHTML = "hung";
+        }
+
+    </script>
+    <!-- <script>
+        var option = "";
+        for(var i=2022; i>=1800; i--){
+            option = option+"<option>"+i+"</option>";
+        }
+        document.getElementById("listyear").innerHTML = option;
+    </script> -->
+
+    <script>
+        var option = "";debugger;
+        for(var i=1800; i<=2021; i++){
+            
+            option += "<option>"+i+"</option>";
+        }
+        document.getElementById("listyear").innerHTML = option;
+
+    </script>
+
+
+    <style>
+        .pass{color: aqua;}
+        .fail{color: red;}
+    </style>
+    <script>
+        
+        var makeColor = "";
+        var diem = 4;
+        if(diem>5){
+            makeColor = "pass";
+        }else{
+            makeColor = "fail"
+        }
+
+        var option = "<h2 class = '"+makeColor+"'> hihii</h2>";
+        document.getElementById("kqua").innerHTML = option;
+    </script>
+
+    
+
+    <script>
+        function checkdiem(){
+            var makeColor = "";
+            var diem = document.getElementById("input").Value;
+            if(diem>5){
+                makeColor = "pass";
+            }else{
+                makeColor = "fail"
+            }
+
+            var option = "<h2 class = '"+makeColor+"'> hihii</h2>";
+            document.getElementById("kqua").innerHTML = option;
+        }
+        document.getElementById("check").addEventListener("check", checkdiem());
+    </script>
+</body>
+</html>

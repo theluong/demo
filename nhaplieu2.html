@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        tr,th,td{
+            border: 1px solid black;
+            width: 33%;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: brown; text-align: center;">List</h1>
+    <input type="text" id ="congViec"> Công việc
+    <select id ="luaChon">
+        <option>to do</option>
+        <option>done</option>
+        <option>cancel</option>
+    </select>
+    <button id = "add" onclick="add()">add</button>
+    <button id = "clear" onclick="clear()">clear</button>
+    <table style="width : 100% "  class="boder">
+        <thead>
+             <tr style="background-color: rgb(247, 247, 239)">
+             <th>công việc</th>
+             <th>trạng thái</th>
+            <th>thời gian</th>
+       </tr>
+        </thead>
+        <tbody id = "infor">
+
+        </tbody>     
+   </table>
+   <script>
+     var fullname = "";
+     
+     function add() {
+        debugger;
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes()+1;
+        if(m == 59){
+            m=0;
+            h=h+1;
+        }
+       
+        if(m<10){
+            m="0"+m;
+        }
+        if(s<10){
+            s="0"+s;
+        }
+        var s = today.getSeconds();
+        var time = h + ":" + m + ":" + s;
+
+       var CV = document.getElementById("congViec").value;
+       var LC = document.getElementById("luaChon").value;
+      // fullname += "<tr "+ check(LC)+"><td>" + CV + "</td> <td>" + LC + "</td>  <td>" + time + "</td> </tr>";
+       fullname += "<tr><td>" + CV + "</td> <td>" + LC + "</td>  <td>" + time + "</td> </tr>";
+       document.getElementById("infor").innerHTML=fullname;
+    }
+
+    function clear(){
+
+    }
+    function check(LC){
+        if(LC == "to do"){
+            return  'style="background-color: yellow"';
+        }
+        if(LC == "done"){
+            return  'style="background-color: green"';
+        }
+        if(LC == "cancel"){
+            return 'style="background-color: red"';
+        }
+    }
+
+    var myVar = setInterval(myTimer, 1000);
+
+    function myTimer() {
+        alert("Hello world!");
+    }
+    //setenternal set time de chay vong lap / queryselectorall 
+    //nguyen dinh nhat .com
+    //eq jquery
+    //json (kieu dữ liệu)
+    //local-staroge (lưu dạng file)
+    //sesion-staroge(bộ nhớ đệm mất khi tắt trình duyệt)
+    //localstragore.setitem()/sessionstragore.setitem() và chỉ nhận kiểu chuỗi
+    //getitem ("tên local stragore")
+    //setitem("tên local", "value")
+    //js sẽ parin các số sang mã 0,1,0,1 rồi ms cộng=> thành ra có 1 số trường hợp cộng sai
+    //import js to js/ chung về 1 file rồi khai báo  hoặc khai báo nhiều
+    </script> 
+</body>
+</html>
